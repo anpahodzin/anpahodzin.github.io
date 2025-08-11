@@ -8,12 +8,12 @@ object HeroStyles : StyleSheet() {
         //            display(DisplayStyle.Grid)
 //            gridTemplateColumns("2fr 1fr")
 //            gridTemplateRows("auto auto")
-//            columnGap(40.px)
+//            columnGap(1.vw)
 //            gap(1.cssRem)
 //            marginTop(200.px)
 //            marginBottom(200.px)
-        paddingTop(200.px)
-        paddingBottom(60.px)
+        marginTop(200.px)
+        marginBottom(60.px)
 
         property("display", "grid")
         property("grid-template-columns", "70% 30%")
@@ -25,15 +25,18 @@ object HeroStyles : StyleSheet() {
                 property("flex-direction", "column")
             }
         }
+
+//        backgroundColor(Color.blueviolet)
     }
 
     val heroTitle by style {
         fontSize(10.em)
-        fontWeight(400)
+//        fontWeight(400)
         lineHeight(1.em)
 //            justifySelf(JustifySelf.End)
 //            alignSelf(AlignSelf.End)
-
+//        backgroundColor(Color.lightblue)
+        width(100.percent)
         property("align-self", "end")
         property("grid-row", "1/3")
     }
@@ -42,8 +45,10 @@ object HeroStyles : StyleSheet() {
         width(200.px)
 //            height(100.percent)
         property("aspect-ratio", "2/3")
-        property("justify-self", "center")
-        property("align-self", "center")
+//        property("justify-self", "center")
+//        property("align-self", "end")
+        justifySelf("end")
+        alignSelf(AlignSelf.Start)
 
 
 //            height(100.pc)
@@ -61,6 +66,13 @@ object HeroStyles : StyleSheet() {
 //                height(100.percent)
 //            }
 //        }
+
+        media("(max-width: 800px)") {
+            self.style {
+                justifySelf("center")
+                alignSelf(AlignSelf.Center)
+            }
+        }
     }
 
     val heroBio by style {

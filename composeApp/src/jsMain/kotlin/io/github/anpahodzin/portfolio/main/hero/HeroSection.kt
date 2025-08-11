@@ -1,6 +1,7 @@
 package io.github.anpahodzin.portfolio.main.hero
 
 import androidx.compose.runtime.Composable
+import io.github.anpahodzin.portfolio.main.hero.title.HeroTitle
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
@@ -18,9 +19,10 @@ fun HeroSection() {
             attrs = { classes(HeroStyles.heroImage) }
         )
         Div(attrs = { classes(HeroStyles.heroTitle) }) {
-            Text("Software")
-            Br()
-            Text("Engineer")
+//            Text("Software")
+//            Br()
+//            Text("Engineer")
+            HeroTitle()
         }
         Div(attrs = { classes(HeroStyles.heroBio) }) {
             Text("Hi, I'm Anton, an Android Developer who builds beautiful and intuitive apps.")

@@ -43,6 +43,7 @@ kotlin {
 
         jsMain.dependencies {
             implementation(compose.html.core)
+            implementation(compose.html.svg)
         }
     }
 }
