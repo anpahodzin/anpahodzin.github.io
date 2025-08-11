@@ -42,5 +42,5 @@ fun HeroTitle() {
 //
 //    HandwrittenAnimationView(viewBox = "0 0 662 377", paths = paths2)
 
-    HandwrittenAnimationView(viewBox = "6 6 514 354", paths = path3)
+    HandwrittenAnimationView(viewBox = "0 0 512 354", paths = path3)
 }
