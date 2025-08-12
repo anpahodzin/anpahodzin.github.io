@@ -6,10 +6,8 @@ import org.jetbrains.compose.web.css.*
 object GlobalStyles : StyleSheet() {
     init {
         "body" style {
-            margin(0.px)
-            padding(0.px)
             backgroundColor(Res.Colors.cursedBlack)
-            backgroundImage("noise6.svg")
+
             color(Res.Colors.white)
             fontFamily("Roboto", "sans-serif")
 //            fontFamily("Helvetica Neue", "Arial", "sans-serif")

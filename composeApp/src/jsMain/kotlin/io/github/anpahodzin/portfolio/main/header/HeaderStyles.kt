@@ -1,5 +1,6 @@
 package io.github.anpahodzin.portfolio.main.header
 
+import io.github.anpahodzin.portfolio.resources.Res
 import org.jetbrains.compose.web.css.*
 
 object HeaderStyles : StyleSheet() {
@@ -10,9 +11,9 @@ object HeaderStyles : StyleSheet() {
         alignItems(AlignItems.Center)
         padding(0.px, 40.px)
 
-        backgroundColor(rgba(22, 22, 22, 0.6))
+        backgroundColor(Res.Colors.headerBackground)
 //            borderRadius(16.px)
-//            property("box-shadow", "0 4px 30px rgba(0, 0, 0, 0.1)")
+        property("box-shadow", "0px 0px 5px 2px ${Res.Colors.headerShadow}")
         property("backdrop-filter", "blur(10px)")
         property("-webkit-backdrop-filter", "blur(10px)")
 
