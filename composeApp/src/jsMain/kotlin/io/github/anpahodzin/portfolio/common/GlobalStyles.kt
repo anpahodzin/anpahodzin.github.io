@@ -7,7 +7,7 @@ object GlobalStyles : StyleSheet() {
     init {
         "body" style {
             backgroundColor(Res.Colors.cursedBlack)
-
+            margin(0.px)
             color(Res.Colors.white)
             fontFamily("Roboto", "sans-serif")
 //            fontFamily("Helvetica Neue", "Arial", "sans-serif")

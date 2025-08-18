@@ -36,7 +36,7 @@ object HeaderStyles : StyleSheet() {
         textDecorationLine("none")
         color(Color("#ffffff"))
         hover {
-//                color(Color("#"))
+                color(Color("#000000"))
 //                textDecorationLine(TextDecorationLine.Underline)
         }
     }

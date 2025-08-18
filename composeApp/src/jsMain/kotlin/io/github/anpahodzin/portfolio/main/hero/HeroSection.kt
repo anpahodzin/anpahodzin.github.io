@@ -13,7 +13,7 @@ fun HeroSection() {
 
     Div(attrs = { classes(HeroStyles.heroSection) }) {
         Img(
-            src = "avatar.jpg",
+            src = "images/avatar.jpg",
             alt = "Profile Photo",
             attrs = { classes(HeroStyles.heroImage) }
         )
