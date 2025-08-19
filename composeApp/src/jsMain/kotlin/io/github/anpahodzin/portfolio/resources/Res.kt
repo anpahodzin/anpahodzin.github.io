@@ -4,7 +4,7 @@ import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.px
 
 object Res {
-    object Colors{
+    object Colors {
         val white = Color.white
         val black = Color.black
 
@@ -18,7 +18,8 @@ object Res {
         val headerBackground = Color("#16161640")
         val headerShadow = Color("#AFAFAF20")
     }
-    object Sizes{
+
+    object Sizes {
         val maxWidth = 1200.px
 
         val portraitMaxWidth = 800.px

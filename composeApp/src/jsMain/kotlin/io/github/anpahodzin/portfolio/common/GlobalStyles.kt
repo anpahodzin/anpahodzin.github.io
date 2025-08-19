@@ -17,5 +17,10 @@ object GlobalStyles : StyleSheet() {
 //            property("font-style", "normal")
 //            property("font-variation-settings", "\"wdth\" 87.5")
         }
+
+        "h2" style {
+            fontSize(2.5.em)
+            property("font-weight", "200")
+        }
     }
 }

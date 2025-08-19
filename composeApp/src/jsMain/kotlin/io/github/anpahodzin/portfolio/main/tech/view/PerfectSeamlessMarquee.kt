@@ -30,7 +30,6 @@ private class PerfectSeamlessMarqueeStyles(
             duration(speed)
         }
         property("will-change", "transform")
-        columnGap(gap)
     }
 
     val marqueeItemPerfect by style {
@@ -41,6 +40,7 @@ private class PerfectSeamlessMarqueeStyles(
         fontSize(18.px)
         fontWeight("bold")
         columnGap(gap)
+        paddingLeft(gap)
     }
 
     init {
@@ -52,8 +52,8 @@ private class PerfectSeamlessMarqueeStyles(
 
 @Composable
 fun PerfectSeamlessMarquee(
-    speed: CSSSizeValue<out CSSUnitTime> = 20.s,
-    gap: CSSNumeric = 32.px,
+    speed: CSSSizeValue<out CSSUnitTime>,
+    gap: CSSNumeric,
     content: ContentBuilder<HTMLDivElement>? = null,
 ) {
     val style = PerfectSeamlessMarqueeStyles(speed, gap)
