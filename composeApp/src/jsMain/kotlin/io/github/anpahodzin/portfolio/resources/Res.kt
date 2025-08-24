@@ -17,6 +17,9 @@ object Res {
 
         val headerBackground = Color("#16161640")
         val headerShadow = Color("#AFAFAF20")
+
+        val darkGray = Color("#151515")
+        val gray = Color("#252525")
     }
 
     object Sizes {
