@@ -51,7 +51,8 @@ object AboutMeStyles : StyleSheet() {
     }
 
     val aboutRight by style {
-
+        paddingRight(24.px)
+        paddingLeft(24.px)
     }
     val aboutTitle by style {
         fontSize(2.5.em)
