@@ -1,11 +1,74 @@
 package io.github.anpahodzin.portfolio.main.aboutme
 
 import androidx.compose.runtime.Composable
+import io.github.anpahodzin.portfolio.common.mediaPortraitMode
+import io.github.anpahodzin.portfolio.resources.Res
+import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.Style
+import org.jetbrains.compose.web.css.StyleSheet
+import org.jetbrains.compose.web.css.columnGap
+import org.jetbrains.compose.web.css.display
+import org.jetbrains.compose.web.css.em
+import org.jetbrains.compose.web.css.fontSize
+import org.jetbrains.compose.web.css.height
+import org.jetbrains.compose.web.css.keywords.auto
+import org.jetbrains.compose.web.css.marginBottom
+import org.jetbrains.compose.web.css.marginTop
+import org.jetbrains.compose.web.css.maxWidth
+import org.jetbrains.compose.web.css.plus
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
+
+object AboutMeStyles : StyleSheet() {
+
+    val aboutMeSection by style {
+//        marginTop(80.px)
+//        marginBottom(80.px)
+//
+//        property("display", "grid")
+//        property("grid-template-columns", "repeat(2, 1fr)")
+//        columnGap(40.px)
+//
+//        mediaPortraitMode {
+//            property("display", "flex")
+//            property("flex-direction", "column")
+//        }
+
+        val topMargin = 60.px
+        val bottomMargin = 20.px
+
+        display(DisplayStyle.Grid)
+        property("grid-template-columns", "1fr 3fr")
+        property("grid-template-rows", "1fr")
+        columnGap(40.px)
+
+        property("padding", "0px ${Res.Sizes.baseHorizontalPadding}")
+        property("margin", "$topMargin auto $bottomMargin")
+        maxWidth(Res.Sizes.maxWidth)
+//        property("height", "calc(100vh - $topMargin - $bottomMargin)")
+
+        mediaPortraitMode {
+            property("grid-template-columns", "1fr")
+            property("grid-template-rows", "auto auto auto")
+            height(auto)
+        }
+    }
+
+    val aboutLeft by style {
+
+    }
+
+    val aboutRight by style {
+
+    }
+    val aboutTitle by style {
+        fontSize(2.5.em)
+        marginBottom(20.px)
+    }
+}
 
 @Composable
 fun AboutMeSection() {
@@ -13,7 +76,7 @@ fun AboutMeSection() {
 
     Div(attrs = { classes(AboutMeStyles.aboutMeSection) }) {
         Div(attrs = { classes(AboutMeStyles.aboutLeft) }) {
-            H2(attrs = { classes(AboutMeStyles.aboutTitle) }) { Text("About Me") }
+            H2(attrs = { classes(AboutMeStyles.aboutTitle) }) { Text("ABOUT ME") }
         }
         Div(attrs = { classes(AboutMeStyles.aboutRight) }) {
             P {

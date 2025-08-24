@@ -31,26 +31,36 @@ object HeroStyles : StyleSheet() {
 
     val heroTitle by style {
         width(100.percent)
-        property("align-self", "end")
+        property("align-content", "end")
         property("grid-row", "1/3")
         property("grid-column", "1/4")
-//      backgroundColor(Color.lightblue)
+
+//        property("position", "relative")
+//        height(100.percent)
+
+        display(DisplayStyle.Grid)
+//        width(300.px)
+//        height(200.px)
+        property("grid-template-areas", "overlap")
+
+        backgroundColor(Color.lightblue)
     }
+
+//    val heroTitleLayer by style {
+//        property("position", "absolute")
+//        property("top", "0")
+//        property("left", "0")
+//        property("width", "100%")
+//        property("height", "100%")
+//        property("align-self", "end")
+//    }
 
     val heroImage by style {
         width(200.px)
         property("aspect-ratio", "2/3")
 
-        justifySelf("end")
-        alignSelf(AlignSelf.Start)
-
         property("object-fit", "cover")
         borderRadius(16.px)
-
-        mediaPortraitMode {
-            justifySelf("center")
-            alignSelf(AlignSelf.Center)
-        }
     }
 
     val heroBio by style {

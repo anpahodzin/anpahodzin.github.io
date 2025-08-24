@@ -9,7 +9,7 @@ fun HeaderSection() {
     Style(HeaderStyles)
 
     Nav(attrs = { classes(HeaderStyles.header) }) {
-        H3(attrs = { classes(HeaderStyles.logo) }) { Text("Anton Pahodzin") }
+        Div(attrs = { classes(HeaderStyles.logo) }) { Text("Anton Pahodzin") }
         Div(attrs = { classes(HeaderStyles.navMenu) }) {
             A(href = "#about", attrs = { classes(HeaderStyles.navItem) }) { Text("About Me") }
             A(href = "#projects", attrs = { classes(HeaderStyles.navItem) }) { Text("Projects") }

@@ -20,6 +20,8 @@ object Res {
     }
 
     object Sizes {
+        val headerHeight = 64.px
+
         val maxWidth = 1200.px
 
         val portraitMaxWidth = 800.px

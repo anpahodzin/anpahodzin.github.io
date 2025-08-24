@@ -1,41 +1,14 @@
 package io.github.anpahodzin.portfolio.common.handwritten
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import io.github.anpahodzin.portfolio.common.handwritten.PathAnimationStylesheet.draw
 import io.github.anpahodzin.portfolio.resources.Res
 import kotlinx.browser.document
 import kotlinx.browser.window
 import org.jetbrains.compose.web.ExperimentalComposeWebSvgApi
-import org.jetbrains.compose.web.css.AnimationFillMode
-import org.jetbrains.compose.web.css.AnimationTimingFunction
-import org.jetbrains.compose.web.css.Color
-import org.jetbrains.compose.web.css.Style
-import org.jetbrains.compose.web.css.StyleSheet
-import org.jetbrains.compose.web.css.animation
-import org.jetbrains.compose.web.css.backgroundColor
-import org.jetbrains.compose.web.css.delay
-import org.jetbrains.compose.web.css.duration
-import org.jetbrains.compose.web.css.fillMode
-import org.jetbrains.compose.web.css.ms
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.plus
-import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.css.timingFunction
-import org.jetbrains.compose.web.dom.ContentBuilder
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.ElementScope
-import org.jetbrains.compose.web.svg.Defs
-import org.jetbrains.compose.web.svg.LinearGradient
-import org.jetbrains.compose.web.svg.Mask
-import org.jetbrains.compose.web.svg.Path
-import org.jetbrains.compose.web.svg.Rect
-import org.jetbrains.compose.web.svg.Stop
-import org.jetbrains.compose.web.svg.Svg
-import org.w3c.dom.svg.SVGDefsElement
+import org.jetbrains.compose.web.svg.*
 import org.w3c.dom.svg.SVGElement
 import org.w3c.dom.svg.SVGPathElement
 
@@ -69,7 +42,7 @@ fun HandwrittenAnimationView(
 ) {
     Style(PathAnimationStylesheet)
 
-    val uniqueName = viewBox.replace(" ","-")
+    val uniqueName = viewBox.replace(" ", "-")
     val pathName: (Int) -> String = { index -> "custom-path-id-$uniqueName-$index" }
 
     var pathLengthList by remember { mutableStateOf(emptyList<Float>()) }
@@ -102,7 +75,7 @@ fun HandwrittenAnimationView(
                     classes(PathAnimationStylesheet.maskedPath)
 
                     style {
-                        val length = pathLengthList.getOrNull(index)?: return@style
+                        val length = pathLengthList.getOrNull(index) ?: return@style
                         val pastLength = pathLengthList.take(index).sum()
                         property("stroke-dasharray", "$length")
                         property("stroke-dashoffset", "$length")

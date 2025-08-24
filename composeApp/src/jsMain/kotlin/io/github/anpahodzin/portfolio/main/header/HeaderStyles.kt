@@ -10,6 +10,7 @@ object HeaderStyles : StyleSheet() {
         justifyContent(JustifyContent.SpaceBetween)
         alignItems(AlignItems.Center)
         padding(0.px, 40.px)
+        height(Res.Sizes.headerHeight)
 
         backgroundColor(Res.Colors.headerBackground)
 //            borderRadius(16.px)
@@ -25,7 +26,7 @@ object HeaderStyles : StyleSheet() {
 //            property("margin", "0px auto")
     }
     val logo by style {
-        fontSize(2.em)
+        fontSize(1.6.em)
         fontWeight("bold")
     }
     val navMenu by style {
