@@ -30,11 +30,11 @@ object TechSectionStyle : StyleSheet() {
 }
 
 private val items = listOf(
-    TechItem(href = "", text = "Kotlin", icon = "icons/ic_kotlin.svg"),
-    TechItem(href = "", text = "Kotlin1", icon = "icons/ic_kotlin.svg"),
-    TechItem(href = "", text = "Kotlin2", icon = "icons/ic_kotlin.svg"),
-    TechItem(href = "", text = "Kotlin3", icon = "icons/ic_kotlin.svg"),
-    TechItem(href = "", text = "Kotlin4", icon = "icons/ic_kotlin.svg"),
+    TechItem(href = "https://kotlinlang.org/", text = "Kotlin", icon = "icons/ic_kotlin.svg"),
+    TechItem(href = "https://www.jetbrains.com/kotlin-multiplatform/", text = "KMP", icon = "icons/ic_kmp.svg"),
+    TechItem(href = "https://developer.android.com/compose", text = "Jetpack Compose", icon = "icons/ic_jetpack_compose.png"),
+    TechItem(href = "https://flutter.dev/", text = "Flutter", icon = "icons/ic_flutter.svg"),
+    TechItem(href = "https://dart.dev/", text = "Dart", icon = "icons/ic_dart.svg"),
 )
 
 @Composable

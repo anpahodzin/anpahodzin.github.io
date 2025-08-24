@@ -1,6 +1,8 @@
 package io.github.anpahodzin.portfolio.main.tech.view
 
 import androidx.compose.runtime.Composable
+import org.jetbrains.compose.web.attributes.ATarget
+import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
@@ -34,6 +36,7 @@ private object TechChipStyles : StyleSheet() {
     }
     val text by style {
 //        textDecorationLine("none")
+        property("white-space", "nowrap")
     }
 }
 
@@ -46,7 +49,11 @@ fun TechChip(
     Style(TechChipStyles)
     A(
         href = href,
-        attrs = { classes(TechChipStyles.btn) }) {
+        attrs = {
+            classes(TechChipStyles.btn)
+            target(ATarget.Blank)
+//          rel="noopener noreferrer"
+        }) {
         Img(
             src = icon,
             alt = text,

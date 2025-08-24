@@ -14,6 +14,10 @@ private class PerfectSeamlessMarqueeStyles(
         overflow("hidden")
         padding(15.px, 0.px)
         borderRadius(5.px)
+
+        val gradient = "linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)"
+        property("-webkit-mask-image", gradient)
+        property("mask-image", gradient)
     }
 
     val marqueeKeyframes by keyframes {
