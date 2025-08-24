@@ -2,21 +2,10 @@ package io.github.anpahodzin.portfolio.main.aboutme
 
 import androidx.compose.runtime.Composable
 import io.github.anpahodzin.portfolio.common.mediaPortraitMode
+import io.github.anpahodzin.portfolio.main.header.HeaderLinks
 import io.github.anpahodzin.portfolio.resources.Res
-import org.jetbrains.compose.web.css.DisplayStyle
-import org.jetbrains.compose.web.css.Style
-import org.jetbrains.compose.web.css.StyleSheet
-import org.jetbrains.compose.web.css.columnGap
-import org.jetbrains.compose.web.css.display
-import org.jetbrains.compose.web.css.em
-import org.jetbrains.compose.web.css.fontSize
-import org.jetbrains.compose.web.css.height
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
-import org.jetbrains.compose.web.css.marginBottom
-import org.jetbrains.compose.web.css.marginTop
-import org.jetbrains.compose.web.css.maxWidth
-import org.jetbrains.compose.web.css.plus
-import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.P
@@ -41,7 +30,7 @@ object AboutMeStyles : StyleSheet() {
         val bottomMargin = 20.px
 
         display(DisplayStyle.Grid)
-        property("grid-template-columns", "1fr 3fr")
+        property("grid-template-columns", "1fr 2fr")
         property("grid-template-rows", "1fr")
         columnGap(40.px)
 
@@ -74,7 +63,10 @@ object AboutMeStyles : StyleSheet() {
 fun AboutMeSection() {
     Style(AboutMeStyles)
 
-    Div(attrs = { classes(AboutMeStyles.aboutMeSection) }) {
+    Div(attrs = {
+        id(HeaderLinks.aboutMe.link)
+        classes(AboutMeStyles.aboutMeSection)
+    }) {
         Div(attrs = { classes(AboutMeStyles.aboutLeft) }) {
             H2(attrs = { classes(AboutMeStyles.aboutTitle) }) { Text("ABOUT ME") }
         }

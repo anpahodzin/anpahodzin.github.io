@@ -5,6 +5,9 @@ import org.jetbrains.compose.web.css.*
 
 object GlobalStyles : StyleSheet() {
     init {
+        "html" style {
+            property("scroll-behavior", "smooth")
+        }
         "body" style {
             backgroundColor(Res.Colors.cursedBlack)
             margin(0.px)
