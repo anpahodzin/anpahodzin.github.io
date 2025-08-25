@@ -22,6 +22,7 @@ object GlobalStyles : StyleSheet() {
         }
 
         "h2" style {
+            margin(0.px)
             fontSize(2.5.em)
             property("font-weight", "200")
         }
