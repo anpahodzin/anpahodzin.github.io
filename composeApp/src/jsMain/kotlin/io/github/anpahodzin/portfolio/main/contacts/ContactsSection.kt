@@ -10,7 +10,7 @@ import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
 import org.jetbrains.compose.web.dom.*
 
-object ContactsStyles : StyleSheet() {
+private object ContactsStyles : StyleSheet() {
     val contactsSection by style {
         val topMargin = 60.px
         val bottomMargin = 20.px
@@ -33,7 +33,7 @@ object ContactsStyles : StyleSheet() {
     }
 
     val contactsTitle by style {
-
+        marginBottom(20.px)
     }
 
     val contactsRight by style {
@@ -67,7 +67,7 @@ object ContactsStyles : StyleSheet() {
 
         color(Color.white) //todo hardcoded color
         borderRadius(24.px)
-        padding(12.px, 24.px)
+        padding(12.px, 12.px)
 
 //        flexDirection(FlexDirection.Row)
 //        justifyContent(JustifyContent.SpaceBetween)
@@ -77,8 +77,6 @@ object ContactsStyles : StyleSheet() {
 
         self + hover style {
             backgroundColor(Res.Colors.gray)
-//            property("box-shadow", "0px 0px 10px 0px #FFFFFF20") //todo hardcoded color
-//            property("transform", "scale(1.05, 1.05)")
         }
     }
 
