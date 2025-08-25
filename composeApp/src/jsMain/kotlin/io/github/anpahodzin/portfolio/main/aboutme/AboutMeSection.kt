@@ -3,8 +3,6 @@ package io.github.anpahodzin.portfolio.main.aboutme
 import androidx.compose.runtime.Composable
 import io.github.anpahodzin.portfolio.common.CommonStyles
 import io.github.anpahodzin.portfolio.main.header.HeaderLinks
-import org.jetbrains.compose.web.css.marginBottom
-import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.Text
@@ -13,14 +11,13 @@ import org.jetbrains.compose.web.dom.Text
 fun AboutMeSection() {
     Div(attrs = {
         id(HeaderLinks.aboutMe.link)
-        classes(CommonStyles.autoSizedCenterSection, CommonStyles.appGridSection)
+        classes(
+            CommonStyles.sectionMarginPaddingRule,
+            CommonStyles.sectionGrid
+        )
     }) {
         Div {
-            H2(attrs = {
-                style {
-                    marginBottom(20.px)
-                }
-            }) { Text("ABOUT ME") }
+            H2 { Text("ABOUT ME") }
         }
         Div {
             Text(

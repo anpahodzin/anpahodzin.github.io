@@ -8,6 +8,7 @@ import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.maxWidth
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.rowGap
 import org.jetbrains.compose.web.css.width
 
 object CommonStyles : StyleSheet() {
@@ -15,24 +16,27 @@ object CommonStyles : StyleSheet() {
         property("box-shadow", "0 0 10px rgba(255, 255, 255, 0.2)")
     }
 
-    val autoSizedCenterSection by style {
-        val topMargin = 60.px
-        val bottomMargin = 20.px
+    val sectionMarginPaddingRule by style {
+        val topMargin = Res.Sizes.sectionTopMargin
+        val bottomMargin = Res.Sizes.sectionBottomMargin
+        property("margin", "$topMargin auto $bottomMargin")
 
-        property("padding", "$topMargin  ${Res.Sizes.baseHorizontalPadding} $bottomMargin")
-        property("margin", "0 auto")
+        property("scroll-margin-top", "${Res.Sizes.headerHeight}")
+
+        property("padding", "0 ${Res.Sizes.baseHorizontalPadding}")
         maxWidth(Res.Sizes.maxWidth)
 
         mediaPortraitMode {
-            property("padding", "$topMargin  ${Res.Sizes.baseHorizontalPaddingSmall} $bottomMargin")
+            property("padding", "0 ${Res.Sizes.baseHorizontalPaddingSmall}")
         }
     }
 
-    val appGridSection by style {
+    val sectionGrid by style {
         display(DisplayStyle.Grid)
         property("grid-template-columns", "1fr 2fr")
         property("grid-template-rows", "1fr")
-        columnGap(40.px)
+        columnGap(Res.Sizes.sectionColumnGridGap)
+        rowGap(Res.Sizes.sectionRowGridGap)
 
         mediaPortraitMode {
             property("grid-template-columns", "1fr")

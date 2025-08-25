@@ -9,21 +9,16 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
-private object FooterStyles : StyleSheet() {
-    val footerSection by style {
-        display(DisplayStyle.Flex)
-        flexDirection(FlexDirection.Column)
-        alignItems(AlignItems.Center)
-        gap(24.px)
-    }
-}
-
 @Composable
 fun FooterSection() {
-    Style(FooterStyles)
-
     Div(attrs = {
-        classes(FooterStyles.footerSection, CommonStyles.autoSizedCenterSection)
+        classes(CommonStyles.sectionMarginPaddingRule)
+        style {
+            display(DisplayStyle.Flex)
+            flexDirection(FlexDirection.Column)
+            alignItems(AlignItems.Center)
+            gap(24.px)
+        }
     }) {
         Div(attrs = {
             style {

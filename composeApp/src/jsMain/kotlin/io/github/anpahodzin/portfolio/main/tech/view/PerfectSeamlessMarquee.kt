@@ -12,8 +12,7 @@ private class PerfectSeamlessMarqueeStyles(
 ) : StyleSheet() {
     val marqueePerfect by style {
         overflow("hidden")
-        padding(15.px, 0.px)
-        borderRadius(5.px)
+        padding(12.px, 0.px)
 
         val gradient = "linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)"
         property("-webkit-mask-image", gradient)
@@ -45,6 +44,9 @@ private class PerfectSeamlessMarqueeStyles(
         fontWeight("bold")
         columnGap(gap)
         paddingLeft(gap)
+
+        property("justify-content", "space-around")
+        property("min-width","100vw")
     }
 
     init {
@@ -66,7 +68,7 @@ fun PerfectSeamlessMarquee(
 
     Div(attrs = { classes(style.marqueePerfect) }) {
         Div(attrs = { classes(style.marqueeContentPerfect) }) {
-            repeat(6) { // todo
+            repeat(2) {
                 Div(attrs = { classes(style.marqueeItemPerfect) }, content = content)
             }
         }

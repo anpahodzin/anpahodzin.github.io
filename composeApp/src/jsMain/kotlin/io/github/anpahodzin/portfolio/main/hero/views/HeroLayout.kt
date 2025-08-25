@@ -17,7 +17,7 @@ object HeroLayoutStyle : StyleSheet() {
         val bottomMargin = 20.px
 
         display(DisplayStyle.Grid)
-        property("grid-template-columns", "3fr 1fr")
+        property("grid-template-columns", "2.6fr 1fr")
         property("grid-template-rows", "1fr 1fr")
         columnGap(40.px)
 
@@ -106,11 +106,13 @@ object HeroLayoutStyle : StyleSheet() {
     }
 
     val heroImage by style {
-        width(200.px)
-        property("aspect-ratio", "2/3")
+        width(100.percent)
 
         property("object-fit", "cover")
         borderRadius(16.px)
+        mediaPortraitMode {
+            width(200.px)
+        }
     }
 }
 

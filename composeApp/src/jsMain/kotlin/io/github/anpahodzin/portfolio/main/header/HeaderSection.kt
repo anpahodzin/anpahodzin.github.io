@@ -1,20 +1,20 @@
 package io.github.anpahodzin.portfolio.main.header
 
 import androidx.compose.runtime.Composable
+import io.github.anpahodzin.portfolio.common.mediaPortraitMode
 import io.github.anpahodzin.portfolio.resources.Res
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
 private object HeaderStyles : StyleSheet() {
-    val header by style {
+    val section by style {
         display(DisplayStyle.Flex)
         justifyContent(JustifyContent.SpaceBetween)
         alignItems(AlignItems.Center)
-        padding(0.px, 40.px)
+        padding(0.px, Res.Sizes.baseHorizontalPadding)
         height(Res.Sizes.headerHeight)
 
         backgroundColor(Res.Colors.headerBackground)
-//            borderRadius(16.px)
         property("box-shadow", "0px 0px 5px 2px ${Res.Colors.headerShadow}")
         property("backdrop-filter", "blur(10px)")
         property("-webkit-backdrop-filter", "blur(10px)")
@@ -24,6 +24,10 @@ private object HeaderStyles : StyleSheet() {
         right(0.px)
         left(0.px)
         property("z-index", "1000")
+
+        mediaPortraitMode {
+            padding(0.px, Res.Sizes.baseHorizontalPaddingSmall)
+        }
     }
     val navLeft by style {
         display(DisplayStyle.Flex)
@@ -37,7 +41,10 @@ private object HeaderStyles : StyleSheet() {
         property("object-fit", "cover")
 
         borderRadius(24.px)
-        property("box-shadow", "0px 0px 10px 0px #FFFFFF20") //todo hardcoded color
+        property("box-shadow", "0px 0px 10px 5px ${Res.Colors.headerShadow}")
+        mediaPortraitMode {
+            property("display", "none")
+        }
     }
     val navMenu by style {
         display(DisplayStyle.Flex)
@@ -55,26 +62,24 @@ private object HeaderStyles : StyleSheet() {
             backgroundColor(Res.Colors.gray)
         }
     }
-    val signInButton by style {
-        backgroundColor(Color("#000000"))
-        color(Color("#FFFFFF"))
-        padding(8.px, 20.px)
-        borderRadius(20.px)
-    }
 }
 
 @Composable
 fun HeaderSection() {
     Style(HeaderStyles)
 
-    Nav(attrs = { classes(HeaderStyles.header) }) {
+    Nav(attrs = { classes(HeaderStyles.section) }) {
         Div(attrs = { classes(HeaderStyles.navLeft) }) {
             Img(
                 src = "site-icons/android-chrome-512x512.png",
                 alt = "Logo",
                 attrs = { classes(HeaderStyles.logo) }
             )
-            Text("Anton Pahodzin")
+            Div {
+                Text("Anton")
+                Br()
+                Text("Pahodzin")
+            }
         }
         Div(attrs = { classes(HeaderStyles.navMenu) }) {
             HeaderLinks.links.forEach { link ->
@@ -82,8 +87,6 @@ fun HeaderSection() {
                     href = link.toAnchor(),
                     attrs = { classes(HeaderStyles.navItem) }) { Text(link.text) }
             }
-//            A(href = "#") { Text("About Us") }
-//            Button(attrs = { classes("sign-in-button") }) { Text("Sign In") }
         }
     }
 }

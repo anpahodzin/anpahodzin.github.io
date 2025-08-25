@@ -1,6 +1,8 @@
 package io.github.anpahodzin.portfolio.main.tech.view
 
 import androidx.compose.runtime.Composable
+import io.github.anpahodzin.portfolio.main.tech.TechItem
+import io.github.anpahodzin.portfolio.resources.Res
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
@@ -13,7 +15,7 @@ private object TechChipStyles : StyleSheet() {
     val btn by style {
         display(DisplayStyle.Flex)
         backgroundColor(Color.white)
-        color(Color("#111")) //todo hardcoded color
+        color(Res.Colors.cursedBlack)
         borderRadius(24.px)
         padding(12.px, 24.px)
 
@@ -24,43 +26,39 @@ private object TechChipStyles : StyleSheet() {
         columnGap(12.px)
 
         self + hover style {
-            property("box-shadow", "0px 0px 10px 0px #FFFFFF20") //todo hardcoded color
+            property("box-shadow", "0px 0px 10px 0px ${Res.Colors.headerShadow}")
             property("transform", "scale(1.05, 1.05)")
         }
     }
-
     val img by style {
         width(24.px)
         height(24.px)
         property("object-fit", "cover")
     }
     val text by style {
-//        textDecorationLine("none")
         property("white-space", "nowrap")
     }
 }
 
 @Composable
-fun TechChip(
-    href: String,
-    text: String,
-    icon: String,
-) {
+fun TechChip(item: TechItem) {
     Style(TechChipStyles)
     A(
-        href = href,
+        href = item.href,
         attrs = {
             classes(TechChipStyles.btn)
             target(ATarget.Blank)
 //          rel="noopener noreferrer"
         }) {
-        Img(
-            src = icon,
-            alt = text,
-            attrs = { classes(TechChipStyles.img) }
-        )
+        item.icon?.let {
+            Img(
+                src = item.icon,
+                alt = item.text,
+                attrs = { classes(TechChipStyles.img) }
+            )
+        }
         Div({ classes(TechChipStyles.text) }) {
-            Text(text)
+            Text(item.text)
         }
     }
 }

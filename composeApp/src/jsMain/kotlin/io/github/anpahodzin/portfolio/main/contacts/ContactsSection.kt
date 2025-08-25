@@ -34,11 +34,9 @@ fun ContactsSection() {
 
     Div(attrs = {
         id(HeaderLinks.contacts.link)
-        classes(CommonStyles.autoSizedCenterSection, CommonStyles.appGridSection)
+        classes(CommonStyles.sectionMarginPaddingRule, CommonStyles.sectionGrid)
     }) {
-        H2(attrs = { style { marginBottom(20.px) } }) {
-            Text("CONTACTS")
-        }
+        H2 { Text("CONTACTS") }
         Div {
             Contacts.contacts.forEach {
                 A(
