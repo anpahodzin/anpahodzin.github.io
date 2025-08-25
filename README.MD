@@ -16,7 +16,3 @@ It is a small project where I experiment with modern Kotlin tools for building r
 Run the browser application: `./gradlew :composeApp:jsBrowserDevelopmentRun --continue`  
 If you need to update Yarn: `./gradlew :kotlinUpgradeYarnLock`
 Run browser UI tests: `./gradlew :composeApp:jsBrowserTest`
-
-# License
-This project is licensed under the MIT License. Feel free to use and modify it.
-
