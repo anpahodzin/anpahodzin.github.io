@@ -26,5 +26,9 @@ object GlobalStyles : StyleSheet() {
             fontSize(2.5.em)
             property("font-weight", "200")
         }
+
+        "a" style {
+            color(Color.white)
+        }
     }
 }
