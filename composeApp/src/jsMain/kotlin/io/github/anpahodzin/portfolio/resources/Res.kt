@@ -28,6 +28,13 @@ object Res {
         val maxWidth = 1200.px
 
         val portraitMaxWidth = 800.px
+
         val baseHorizontalPadding = 40.px
+        val baseHorizontalPaddingSmall = 20.px
+
+        val sectionTopMargin = 40.px
+        val sectionBottomMargin = 20.px
+        val sectionRowGridGap = 20.px
+        val sectionColumnGridGap = 40.px
     }
 }

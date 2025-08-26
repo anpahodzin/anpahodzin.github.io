@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose)
-    alias(libs.plugins.kotlinx.serialization)
+//    alias(libs.plugins.kotlinx.serialization)
 }
 
 kotlin {
@@ -16,9 +16,9 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(compose.runtime)
-            implementation(compose.ui)
-            implementation(compose.foundation)
-            implementation(compose.material3)
+//            implementation(compose.ui)
+//            implementation(compose.foundation)
+//            implementation(compose.material3)
 //            implementation(compose.components.resources)
 //            implementation(compose.components.uiToolingPreview)
 //            implementation(libs.kermit)

@@ -2,6 +2,7 @@ package io.github.anpahodzin.portfolio.main.hero.views
 
 import androidx.compose.runtime.Composable
 import io.github.anpahodzin.portfolio.common.mediaPortraitMode
+import io.github.anpahodzin.portfolio.main.hero.title.HeroText
 import io.github.anpahodzin.portfolio.main.hero.title.HeroTitle
 import io.github.anpahodzin.portfolio.resources.Res
 import org.jetbrains.compose.web.css.*
@@ -17,7 +18,7 @@ object HeroLayoutStyle : StyleSheet() {
         val bottomMargin = 20.px
 
         display(DisplayStyle.Grid)
-        property("grid-template-columns", "3fr 1fr")
+        property("grid-template-columns", "2.6fr 1fr")
         property("grid-template-rows", "1fr 1fr")
         columnGap(40.px)
 
@@ -106,11 +107,13 @@ object HeroLayoutStyle : StyleSheet() {
     }
 
     val heroImage by style {
-        width(200.px)
-        property("aspect-ratio", "2/3")
+        width(100.percent)
 
         property("object-fit", "cover")
         borderRadius(16.px)
+        mediaPortraitMode {
+            width(200.px)
+        }
     }
 }
 
@@ -120,11 +123,8 @@ fun HeroLayout() {
 
     Div(attrs = { classes(HeroLayoutStyle.gridContainer) }) {
         Div(attrs = { classes(HeroLayoutStyle.gridItemLarge) }) {
-            Div(attrs = { classes(HeroLayoutStyle.largeCellText) }) {
-//                Text("Software")
-//                Br()
-//                Text("Engineer")
-//                HeroTextTitle()
+            Div(attrs = { classes(HeroLayoutStyle.largeCellImage) }) {
+                HeroText()
             }
             Div(attrs = { classes(HeroLayoutStyle.largeCellImage) }) {
                 HeroTitle()
