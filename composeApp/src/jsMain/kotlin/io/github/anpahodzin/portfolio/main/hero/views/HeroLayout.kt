@@ -2,6 +2,7 @@ package io.github.anpahodzin.portfolio.main.hero.views
 
 import androidx.compose.runtime.Composable
 import io.github.anpahodzin.portfolio.common.mediaPortraitMode
+import io.github.anpahodzin.portfolio.main.hero.title.HeroText
 import io.github.anpahodzin.portfolio.main.hero.title.HeroTitle
 import io.github.anpahodzin.portfolio.resources.Res
 import org.jetbrains.compose.web.css.*
@@ -122,11 +123,8 @@ fun HeroLayout() {
 
     Div(attrs = { classes(HeroLayoutStyle.gridContainer) }) {
         Div(attrs = { classes(HeroLayoutStyle.gridItemLarge) }) {
-            Div(attrs = { classes(HeroLayoutStyle.largeCellText) }) {
-//                Text("Software")
-//                Br()
-//                Text("Engineer")
-//                HeroTextTitle()
+            Div(attrs = { classes(HeroLayoutStyle.largeCellImage) }) {
+                HeroText()
             }
             Div(attrs = { classes(HeroLayoutStyle.largeCellImage) }) {
                 HeroTitle()
