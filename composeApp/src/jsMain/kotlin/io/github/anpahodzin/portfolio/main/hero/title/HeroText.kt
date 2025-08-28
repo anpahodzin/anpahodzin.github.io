@@ -22,8 +22,8 @@ private object HeroTextStylesheet : StyleSheet() {
 //        }
 
         animation(keyframes) {
-            delay(500.ms)
-            duration(6000.ms)
+            delay(600.ms)
+            duration(3000.ms)
             timingFunction(AnimationTimingFunction.Linear)
             fillMode(AnimationFillMode.Forwards)
         }
@@ -40,7 +40,9 @@ private const val path =
 @Composable
 fun HeroText() {
     Style(HeroTextStylesheet)
-    Svg("0 0 506 348") {
+    Svg("0 0 506 348", attrs ={
+        style { property("will-change", "transform") }
+    }) {
         Defs {
             LinearGradient(id = "fadeGradient") {
                 Stop(attrs = {
