@@ -5,22 +5,12 @@ import org.jetbrains.compose.web.ExperimentalComposeWebSvgApi
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.svg.*
 
-
 private object HeroTextStylesheet : StyleSheet() {
     val keyframes by keyframes {
         from { property("transform", "translateX(-50%)") }
         to { property("transform", "translateX(100%)") }
     }
     val rect by style {
-//        display(DisplayStyle.Flex)
-//        property("width", "fit-content")
-
-//        animation(keyframes) {
-//            timingFunction(AnimationTimingFunction.Linear)
-//            iterationCount(1)
-//            duration(10.s)
-//        }
-
         animation(keyframes) {
             delay(600.ms)
             duration(3000.ms)
@@ -30,7 +20,6 @@ private object HeroTextStylesheet : StyleSheet() {
         property("transform", "translateX(-50%)")
         property("will-change", "transform")
     }
-
 }
 
 private const val path =
@@ -38,7 +27,7 @@ private const val path =
 
 @OptIn(ExperimentalComposeWebSvgApi::class)
 @Composable
-fun HeroText() {
+fun HeroTitleSecondLayer() {
     Style(HeroTextStylesheet)
     Svg("0 0 506 348", attrs ={
         style { property("will-change", "transform") }
@@ -66,7 +55,6 @@ fun HeroText() {
                     attr("stop-opacity", "1")
                 })
             }
-
             Mask(id = "fadeMask") {
                 Rect(x = 0.px, y = 0.px, width = 150.percent, height = 100.percent, attrs = {
                     classes(HeroTextStylesheet.rect)
@@ -82,10 +70,7 @@ fun HeroText() {
 //                    })
                 }
             }
-
-
         }
-
         Path(d = path, attrs = {
             style {
                 property("fill", "white")

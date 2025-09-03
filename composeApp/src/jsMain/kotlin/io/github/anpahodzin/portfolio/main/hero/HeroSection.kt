@@ -1,49 +1,54 @@
 package io.github.anpahodzin.portfolio.main.hero
 
 import androidx.compose.runtime.Composable
-import io.github.anpahodzin.portfolio.main.hero.title.HeroTitle
-import org.jetbrains.compose.web.css.Color
-import org.jetbrains.compose.web.css.Style
-import org.jetbrains.compose.web.css.backgroundColor
-import org.jetbrains.compose.web.css.rgba
-import org.jetbrains.compose.web.dom.Br
+import io.github.anpahodzin.portfolio.common.mediaPortraitMode
+import io.github.anpahodzin.portfolio.main.hero.title.HeroTitleSecondLayer
+import io.github.anpahodzin.portfolio.main.hero.title.HeroTitleFirstLayer
+import io.github.anpahodzin.portfolio.main.hero.views.HeroLayout
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
 
-@Composable
-fun HeroSection() {
-    Style(HeroStyles)
+private object HeroSectionStyle : StyleSheet() {
+    val largeCellImage by style {
+        position(Position.Absolute)
+        bottom(0.px)
+        width(100.percent)
+    }
+    val heroImage by style {
+        width(100.percent)
 
-    Div(attrs = { classes(HeroStyles.heroSection) }) {
-        Img(
-            src = "images/avatar.jpg",
-            alt = "Profile Photo",
-            attrs = { classes(HeroStyles.heroImage) }
-        )
-        Div(attrs = { classes(HeroStyles.heroTitle) }) {
-            Div(attrs = { style {
-//                property("position", "relative")
-//                property("top", "0")
-//                property("left", "0")
-//                property("width", "100%")
-//                property("height", "100%")
-//                property("align-self", "end")
-                property("grid-area", "overlap")
-                backgroundColor(rgba(200, 0, 0, 0.3))
-            } }) {
-                Div(attrs = { /*classes(HeroStyles.heroTitleLayer)*/ }) {
-                    Text("Software")
-                    Br()
-                    Text("Engineer")
-                }
-                Div(attrs = { /*classes(HeroStyles.heroTitleLayer)*/  style { backgroundColor(rgba(200, 200, 200, 0.2)) }}) {
-                    HeroTitle()
-                }
-            }
-        }
-        Div(attrs = { classes(HeroStyles.heroBio) }) {
-            Text("Hi, I'm Anton, an Android Developer who builds beautiful and intuitive apps.")
+        property("object-fit", "cover")
+        borderRadius(24.px)
+        mediaPortraitMode {
+            width(200.px)
         }
     }
+}
+
+@Composable
+fun HeroSection() {
+    Style(HeroSectionStyle)
+
+    HeroLayout(
+        largeGridCell = {
+            Div(attrs = { classes(HeroSectionStyle.largeCellImage) }) {
+                HeroTitleSecondLayer()
+            }
+            Div(attrs = { classes(HeroSectionStyle.largeCellImage) }) {
+                HeroTitleFirstLayer()
+            }
+        },
+        smallTopGridCell = {
+            Img(
+                src = "images/avatar.jpg",
+                alt = "Profile Photo",
+                attrs = { classes(HeroSectionStyle.heroImage) }
+            )
+        },
+        smallBottomGridCell = {
+            Text("Hi, I'm Anton, an Android Developer who builds beautiful and intuitive apps.")
+        }
+    )
 }
