@@ -13,7 +13,7 @@ fun AboutMeSection() {
         id(HeaderLinks.aboutMe.link)
         classes(
             CommonStyles.sectionMarginPaddingRule,
-            CommonStyles.sectionGrid
+            CommonStyles.sectionGridRule
         )
     }) {
         Div {

@@ -1,6 +1,7 @@
 package io.github.anpahodzin.portfolio.main.hero.views
 
 import androidx.compose.runtime.Composable
+import io.github.anpahodzin.portfolio.common.CommonStyles
 import io.github.anpahodzin.portfolio.common.mediaPortraitMode
 import io.github.anpahodzin.portfolio.main.hero.title.HeroText
 import io.github.anpahodzin.portfolio.main.hero.title.HeroTitle
@@ -11,25 +12,18 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
 
-object HeroLayoutStyle : StyleSheet() {
+private object HeroLayoutStyle : StyleSheet() {
 
     val gridContainer by style {
         val topMargin = Res.Sizes.headerHeight + 40.px
         val bottomMargin = 20.px
 
-        display(DisplayStyle.Grid)
         property("grid-template-columns", "2.6fr 1fr")
-        property("grid-template-rows", "1fr 1fr")
-        columnGap(40.px)
-
-        property("padding", "0px ${Res.Sizes.baseHorizontalPadding}")
         property("margin", "$topMargin auto $bottomMargin")
-        maxWidth(Res.Sizes.maxWidth)
         property("height", "calc(100vh - $topMargin - $bottomMargin)")
 
         mediaPortraitMode {
             property("grid-template-columns", "1fr")
-            property("grid-template-rows", "auto auto auto")
             height(auto)
         }
     }
@@ -82,22 +76,6 @@ object HeroLayoutStyle : StyleSheet() {
         }
     }
 
-    val largeCellText by style {
-        position(Position.Absolute)
-        bottom(0.px)
-        left(0.px)
-        right(0.px)
-        padding(20.px)
-        property("z-index", "1")
-        fontSize(10.vw)
-        property("margin-bottom", "30%")
-
-        mediaPortraitMode {
-            fontSize(20.vw)
-            property("margin-bottom", "0")
-        }
-    }
-
     val largeCellImage by style {
         position(Position.Absolute)
         bottom(0.px)
@@ -121,7 +99,13 @@ object HeroLayoutStyle : StyleSheet() {
 fun HeroLayout() {
     Style(HeroLayoutStyle)
 
-    Div(attrs = { classes(HeroLayoutStyle.gridContainer) }) {
+    Div(attrs = {
+        classes(
+            HeroLayoutStyle.gridContainer,
+            CommonStyles.sectionMarginPaddingRule,
+            CommonStyles.sectionGridRule
+        )
+    }) {
         Div(attrs = { classes(HeroLayoutStyle.gridItemLarge) }) {
             Div(attrs = { classes(HeroLayoutStyle.largeCellImage) }) {
                 HeroText()

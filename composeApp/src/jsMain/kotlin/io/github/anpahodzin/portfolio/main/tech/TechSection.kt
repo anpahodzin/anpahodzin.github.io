@@ -53,7 +53,7 @@ fun TechSection() {
         classes(
             TechSectionStyle.techSection,
             CommonStyles.sectionMarginPaddingRule,
-            CommonStyles.sectionGrid
+            CommonStyles.sectionGridRule
         )
     }) {
         H2(attrs = {

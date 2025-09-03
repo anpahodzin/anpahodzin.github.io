@@ -34,7 +34,7 @@ fun ContactsSection() {
 
     Div(attrs = {
         id(HeaderLinks.contacts.link)
-        classes(CommonStyles.sectionMarginPaddingRule, CommonStyles.sectionGrid)
+        classes(CommonStyles.sectionMarginPaddingRule, CommonStyles.sectionGridRule)
     }) {
         H2 { Text("CONTACTS") }
         Div {
