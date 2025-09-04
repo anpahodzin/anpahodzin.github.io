@@ -14,7 +14,6 @@ private object ContactsStyles : StyleSheet() {
         property("display", "flex")
         property("width", "fit-content")
 
-        color(Color.white)
         borderRadius(24.px)
         padding(12.px, 12.px)
 
@@ -34,7 +33,7 @@ fun ContactsSection() {
 
     Div(attrs = {
         id(HeaderLinks.contacts.link)
-        classes(CommonStyles.sectionMarginPaddingRule, CommonStyles.sectionGrid)
+        classes(CommonStyles.sectionMarginPaddingRule, CommonStyles.sectionGridRule)
     }) {
         H2 { Text("CONTACTS") }
         Div {

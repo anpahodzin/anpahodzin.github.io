@@ -32,6 +32,8 @@ private object HeaderStyles : StyleSheet() {
     val navLeft by style {
         display(DisplayStyle.Flex)
         alignItems(AlignItems.Center)
+        flexDirection(FlexDirection.Row)
+        height(100.percent)
         gap(12.px)
         fontSize(1.2.em)
     }
@@ -40,8 +42,14 @@ private object HeaderStyles : StyleSheet() {
         property("aspect-ratio", "1/1")
         property("object-fit", "cover")
 
-        borderRadius(24.px)
-        property("box-shadow", "0px 0px 10px 5px ${Res.Colors.headerShadow}")
+        mediaPortraitMode {
+            property("display", "none")
+        }
+    }
+    val divider by style {
+        property("height", "calc(100% - 24px)")
+        width(2.px)
+        backgroundColor(Res.Colors.gray)
         mediaPortraitMode {
             property("display", "none")
         }
@@ -49,10 +57,12 @@ private object HeaderStyles : StyleSheet() {
     val navMenu by style {
         display(DisplayStyle.Flex)
         gap(12.px)
+        mediaPortraitMode {
+            gap(4.px)
+        }
     }
     val navItem by style {
         textDecorationLine("none")
-        color(Color.white)
 
         property("white-space", "nowrap")
         borderRadius(24.px)
@@ -60,6 +70,10 @@ private object HeaderStyles : StyleSheet() {
 
         self + hover style {
             backgroundColor(Res.Colors.gray)
+        }
+        mediaPortraitMode {
+            fontSize(0.9.em)
+            padding(8.px, 4.px)
         }
     }
 }
@@ -71,10 +85,11 @@ fun HeaderSection() {
     Nav(attrs = { classes(HeaderStyles.section) }) {
         Div(attrs = { classes(HeaderStyles.navLeft) }) {
             Img(
-                src = "site-icons/android-chrome-512x512.png",
+                src = "icons/ic_project.svg",
                 alt = "Logo",
                 attrs = { classes(HeaderStyles.logo) }
             )
+            Div(attrs = { classes(HeaderStyles.divider) })
             Div {
                 Text("Anton")
                 Br()

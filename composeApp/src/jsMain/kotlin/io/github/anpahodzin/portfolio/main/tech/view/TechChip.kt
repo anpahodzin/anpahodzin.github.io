@@ -1,7 +1,7 @@
 package io.github.anpahodzin.portfolio.main.tech.view
 
 import androidx.compose.runtime.Composable
-import io.github.anpahodzin.portfolio.main.tech.TechItem
+import io.github.anpahodzin.portfolio.main.tech.model.TechItem
 import io.github.anpahodzin.portfolio.resources.Res
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
@@ -14,7 +14,7 @@ import org.jetbrains.compose.web.dom.Text
 private object TechChipStyles : StyleSheet() {
     val btn by style {
         display(DisplayStyle.Flex)
-        backgroundColor(Color.white)
+        backgroundColor(Res.Colors.graySteel200)
         color(Res.Colors.cursedBlack)
         borderRadius(24.px)
         padding(12.px, 24.px)
@@ -25,9 +25,11 @@ private object TechChipStyles : StyleSheet() {
         textDecorationLine("none")
         columnGap(12.px)
 
+        property("transition", "transform 0.6s ease")
+
         self + hover style {
             property("box-shadow", "0px 0px 10px 0px ${Res.Colors.headerShadow}")
-            property("transform", "scale(1.05, 1.05)")
+            property("transform", "scale(1.2, 1.2)")
         }
     }
     val img by style {

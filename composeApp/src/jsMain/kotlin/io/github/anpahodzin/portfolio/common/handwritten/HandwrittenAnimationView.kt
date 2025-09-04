@@ -12,7 +12,6 @@ import org.jetbrains.compose.web.svg.*
 import org.w3c.dom.svg.SVGElement
 import org.w3c.dom.svg.SVGPathElement
 
-//CSS
 private object PathAnimationStylesheet : StyleSheet() {
     val draw by keyframes {
 //        from { property("stroke-dashoffset", "100%") }

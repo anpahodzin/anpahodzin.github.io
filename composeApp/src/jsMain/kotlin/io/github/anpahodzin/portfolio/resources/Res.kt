@@ -18,8 +18,17 @@ object Res {
         val headerBackground = Color("#16161640")
         val headerShadow = Color("#AFAFAF20")
 
-        val darkGray = Color("#151515")
-        val gray = Color("#252525")
+        val graySteel100 = Color("#F8F9FA")
+        val graySteel200 = Color("#E9ECEF")
+        val graySteel300 = Color("#DEE2E6")
+        val graySteel400 = Color("#CED4DA")
+        val graySteel500 = Color("#ADB5BD")
+        val graySteel600 = Color("#6C757D")
+        val graySteel700 = Color("#495057")
+        val graySteel800 = Color("#343A40")
+        val graySteel900 = Color("#212529")
+
+        val gray = graySteel900
     }
 
     object Sizes {

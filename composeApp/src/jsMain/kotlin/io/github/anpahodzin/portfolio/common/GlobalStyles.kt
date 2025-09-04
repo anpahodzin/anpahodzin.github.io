@@ -11,7 +11,7 @@ object GlobalStyles : StyleSheet() {
         "body" style {
             backgroundColor(Res.Colors.cursedBlack)
             margin(0.px)
-            color(Res.Colors.white)
+            color(Res.Colors.graySteel100)
             fontFamily("Roboto", "sans-serif")
 //            fontFamily("Helvetica Neue", "Arial", "sans-serif")
 //            fontSize(16.px)
@@ -28,7 +28,7 @@ object GlobalStyles : StyleSheet() {
         }
 
         "a" style {
-            color(Color.white)
+            color(Res.Colors.graySteel100)
         }
     }
 }

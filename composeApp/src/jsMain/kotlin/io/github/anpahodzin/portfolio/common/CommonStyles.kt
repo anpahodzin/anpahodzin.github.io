@@ -31,7 +31,7 @@ object CommonStyles : StyleSheet() {
         }
     }
 
-    val sectionGrid by style {
+    val sectionGridRule by style {
         display(DisplayStyle.Grid)
         property("grid-template-columns", "1fr 2fr")
         property("grid-template-rows", "1fr")

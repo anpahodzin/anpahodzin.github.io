@@ -6,14 +6,12 @@ data class HeaderLink(val link: String, val text: String) {
 
 object HeaderLinks {
     val aboutMe = HeaderLink("aboutMe", "About Me")
-    val projects = HeaderLink("projects", "Projects")
-    val skills = HeaderLink("skills", "Skills")
+    val experience = HeaderLink("experience", "Experience")
     val contacts = HeaderLink("contacts", "Contacts")
 
     val links = listOf(
         aboutMe,
-        projects,
-//        skills,
+        experience,
         contacts
     )
 }
