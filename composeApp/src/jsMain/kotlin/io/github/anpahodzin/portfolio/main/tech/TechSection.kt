@@ -2,6 +2,7 @@ package io.github.anpahodzin.portfolio.main.tech
 
 import androidx.compose.runtime.Composable
 import io.github.anpahodzin.portfolio.common.CommonStyles
+import io.github.anpahodzin.portfolio.main.tech.model.TechItem
 import io.github.anpahodzin.portfolio.main.tech.view.PerfectSeamlessMarquee
 import io.github.anpahodzin.portfolio.main.tech.view.TechChip
 import org.jetbrains.compose.web.css.*
@@ -43,7 +44,11 @@ private val items = listOf(
     TechItem(href = "https://bloclibrary.dev/", text = "Bloc", icon = "icons/ic_bloc.svg"),
     TechItem(href = "https://insert-koin.io/", text = "Koin", icon = "icons/ic_koin.png"),
     TechItem(href = "https://ktor.io/", text = "Ktor", icon = "icons/ic_ktor.png"),
-    TechItem(href = "https://arkivanov.github.io/Decompose/", text = "Decompose", icon = "icons/ic_decompose.png")
+    TechItem(
+        href = "https://arkivanov.github.io/Decompose/",
+        text = "Decompose",
+        icon = "icons/ic_decompose.png"
+    )
 )
 
 @Composable
