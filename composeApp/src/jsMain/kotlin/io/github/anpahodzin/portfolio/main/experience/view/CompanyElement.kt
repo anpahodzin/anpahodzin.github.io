@@ -3,24 +3,33 @@ package io.github.anpahodzin.portfolio.main.experience.view
 import androidx.compose.runtime.Composable
 import io.github.anpahodzin.portfolio.main.experience.model.Company
 import io.github.anpahodzin.portfolio.resources.Res
+import org.jetbrains.compose.web.attributes.ATarget
+import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun CompanyElement(company: Company) {
-    Div(attrs = {
-        style {
-            display(DisplayStyle.Flex)
-            flexDirection(FlexDirection.Row)
-            alignItems(AlignItems.Center)
-            justifyContent(JustifyContent.SpaceBetween)
+    A(
+        href = company.url,
+        attrs = {
+            target(ATarget.Blank)
+//            rel="noopener noreferrer"
+            style {
+                display(DisplayStyle.Flex)
+                flexDirection(FlexDirection.Row)
+                alignItems(AlignItems.Center)
+                justifyContent(JustifyContent.SpaceBetween)
 
-            gap(18.px)
-            padding(18.px, 24.px)
-        }
-    }) {
+                gap(18.px)
+                padding(18.px, 24.px)
+
+                textDecorationLine("none")
+            }
+        }) {
         Div(attrs = {
             style {
                 display(DisplayStyle.Flex)
