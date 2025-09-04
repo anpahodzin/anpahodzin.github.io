@@ -14,7 +14,6 @@ private object ContactsStyles : StyleSheet() {
         property("display", "flex")
         property("width", "fit-content")
 
-        color(Color.white)
         borderRadius(24.px)
         padding(12.px, 12.px)
 

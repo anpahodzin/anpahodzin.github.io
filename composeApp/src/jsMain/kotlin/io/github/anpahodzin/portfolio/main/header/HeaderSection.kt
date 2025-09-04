@@ -63,7 +63,6 @@ private object HeaderStyles : StyleSheet() {
     }
     val navItem by style {
         textDecorationLine("none")
-        color(Color.white)
 
         property("white-space", "nowrap")
         borderRadius(24.px)

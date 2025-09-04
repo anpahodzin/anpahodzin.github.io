@@ -39,7 +39,6 @@ private class PerfectSeamlessMarqueeStyles(
         display(DisplayStyle.Flex)
         property("flex-shrink", "0")
         whiteSpace("nowrap")
-        color(Color.white)
         fontSize(18.px)
         fontWeight("bold")
         columnGap(gap)
