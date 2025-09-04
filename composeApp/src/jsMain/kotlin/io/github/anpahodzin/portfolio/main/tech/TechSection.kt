@@ -5,6 +5,7 @@ import io.github.anpahodzin.portfolio.common.CommonStyles
 import io.github.anpahodzin.portfolio.main.tech.model.TechItem
 import io.github.anpahodzin.portfolio.main.tech.view.PerfectSeamlessMarquee
 import io.github.anpahodzin.portfolio.main.tech.view.TechChip
+import io.github.anpahodzin.portfolio.resources.Res
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H2
@@ -18,7 +19,7 @@ object TechSectionStyle : StyleSheet() {
     }
     val title by style {
         property("margin", "0 auto")
-        width(100.percent)
+        property("width", "calc(100% - 2 * ${Res.Sizes.baseHorizontalPadding})")
     }
 }
 
