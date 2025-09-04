@@ -3,6 +3,7 @@ package io.github.anpahodzin.portfolio.main
 import androidx.compose.runtime.Composable
 import io.github.anpahodzin.portfolio.main.aboutme.AboutMeSection
 import io.github.anpahodzin.portfolio.main.contacts.ContactsSection
+import io.github.anpahodzin.portfolio.main.experience.ExperienceSection
 import io.github.anpahodzin.portfolio.main.footer.FooterSection
 import io.github.anpahodzin.portfolio.main.header.HeaderSection
 import io.github.anpahodzin.portfolio.main.hero.HeroSection
@@ -26,6 +27,7 @@ fun MainPage() {
         HeroSection()
         TechSection()
         AboutMeSection()
+        ExperienceSection()
         ContactsSection()
         FooterSection()
     }
