@@ -7,18 +7,18 @@ import org.jetbrains.compose.web.svg.*
 
 private object HeroTextStylesheet : StyleSheet() {
     val keyframes by keyframes {
-        from { property("transform", "translateX(-50%)") }
-        to { property("transform", "translateX(100%)") }
+        from { property("opacity", "100%") }
+        to { property("opacity", "0%") }
     }
-    val rect by style {
+    val svg by style {
         animation(keyframes) {
-            delay(600.ms)
-            duration(3000.ms)
+            delay(800.ms)
+            duration(3500.ms)
             timingFunction(AnimationTimingFunction.Linear)
             fillMode(AnimationFillMode.Forwards)
         }
-        property("transform", "translateX(-50%)")
-        property("will-change", "transform")
+        property("opacity", "100%")
+        property("will-change", "opacity")
     }
 }
 
@@ -30,47 +30,8 @@ private const val path =
 fun HeroTitleSecondLayer() {
     Style(HeroTextStylesheet)
     Svg("0 0 506 348", attrs ={
-        style { property("will-change", "transform") }
+        classes(HeroTextStylesheet.svg)
     }) {
-        Defs {
-            LinearGradient(id = "fadeGradient") {
-                Stop(attrs = {
-                    attr("offset", "0%")
-                    attr("stop-color", "white")
-                    attr("stop-opacity", "0")
-                })
-                Stop(attrs = {
-                    attr("offset", "25%")
-                    attr("stop-color", "white")
-                    attr("stop-opacity", "1")
-                })
-//                Stop(attrs = {
-//                    attr("offset", "50%")
-//                    attr("stop-color", "white")
-//                    attr("stop-opacity", "1")
-//                })
-                Stop(attrs = {
-                    attr("offset", "100%")
-                    attr("stop-color", "white")
-                    attr("stop-opacity", "1")
-                })
-            }
-            Mask(id = "fadeMask") {
-                Rect(x = 0.px, y = 0.px, width = 150.percent, height = 100.percent, attrs = {
-                    classes(HeroTextStylesheet.rect)
-                    attr("fill", "url(#fadeGradient)")
-                }) {
-//                    AnimateTransform (attrs = {
-//                        attr("attributeName","gradientTransform")
-//                        attr("type","translate")
-//                        attr("from","0 0")
-//                        attr("to","100 100")
-//                        attr("dur","4s")
-//                        attr("repeatCount","indefinite")
-//                    })
-                }
-            }
-        }
         Path(d = path, attrs = {
             style {
                 property("fill", "white")

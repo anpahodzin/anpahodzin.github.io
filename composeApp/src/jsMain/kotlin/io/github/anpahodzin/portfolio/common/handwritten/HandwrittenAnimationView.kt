@@ -36,8 +36,8 @@ private object PathAnimationStylesheet : StyleSheet() {
 fun HandwrittenAnimationView(
     viewBox: String,
     paths: List<String>,
-    delayAnimationMs: Int = 3000,
-    durationAnimationMs: Int = 4000,
+    delayAnimationMs: Int = 2000,
+    durationAnimationMs: Int = 3500,
 ) {
     Style(PathAnimationStylesheet)
 
